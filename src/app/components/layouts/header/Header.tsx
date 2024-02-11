@@ -14,7 +14,7 @@ export const Header = () => {
     // <header className={styles.root_title}>
     <header>
       <nav className={styles.nav}>
-        <h1>Kuripome Site</h1>
+        <h1><Link href="/">Kuripome Site</Link></h1>
         <ul className={styles.ul}>
           {
             headers.map((header, index) => (

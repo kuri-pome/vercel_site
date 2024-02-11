@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div>
         <Image
-          src="/top_text.jpg"
+          src="/img/top_text.jpg"
           alt="Description of image"
           width={1280}
           height={655}

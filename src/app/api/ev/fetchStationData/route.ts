@@ -1,6 +1,9 @@
 import React from 'react'
+import { NextRequest, NextResponse } from "next/server"
 
-export const fetchStationData = async (stationId: number) => {
+export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams
+  const stationId = searchParams.get('stationId')
   const response = await fetch(
     `https://driver.e-mobipower.co.jp/stationFacade/findStationById?stationId=${stationId}`,
     {
@@ -17,16 +20,16 @@ export const fetchStationData = async (stationId: number) => {
         'Sec-Fetch-Mode': 'cors',
         'Sec-Fetch-Site': 'same-origin',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-        'X-Csrf-Token': '30ff31b7-f83c-4962-8db0-c8f943c6d414',
         'X-Json-Types': 'None',
         'X-Requested-With': 'XMLHttpRequest'
       },
     }
   );
+  const data = await response.json()
   try {
-    const data = await response.json();
-    return data.data;
-  } catch(error) {
-    console.error('There was a problem with your fetch operation:', error);
+    return NextResponse.json(data.data);
+  } catch (error) {
+    console.error('There was a problem with parsing JSON response:', error);
+    throw error;
   }
 };

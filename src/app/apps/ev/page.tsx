@@ -7,11 +7,19 @@ import EvList from '@/features/ev/components/EvList';
 // Route Segment Config
 // export const fetchCache = 'default-no-store';
 
-const fetchStationId = async (stationName: string) => {
+const createApiBase = () => {
   const headersData = headers()
   const host = headersData.get('host')
-  const protocol = headersData.get('x-forwarded-proto') ?? host.startWith('localhost') ? 'http' : 'https'
-  const apiBase = `${protocol}://${host}`
+  var apiBase = "http:localhost"
+  if (host) {
+    const protocol = headersData.get('x-forwarded-proto') ?? (host.startsWith('localhost') ? 'http' : 'https')
+    apiBase = `${protocol}://${host}`
+  }
+  return apiBase;
+}
+
+const fetchStationId = async (stationName: string) => {
+  const apiBase = createApiBase()
   const response = await fetch(`${apiBase}/api/ev/findPlacesByQuery`, {
     method: 'POST',
     cache: "no-store", //SSR
@@ -26,10 +34,7 @@ const fetchStationId = async (stationName: string) => {
 }
 
 const fetchStationData = async (stationId: number) => {
-  const headersData = headers()
-  const host = headersData.get('host')
-  const protocol = headersData.get('x-forwarded-proto') ?? host.startWith('localhost') ? 'http' : 'https'
-  const apiBase = `${protocol}://${host}`
+  const apiBase = createApiBase()
   const response = await fetch(`${apiBase}/api/ev/fetchStationData?stationId=${stationId}`, {
     method: 'GET',
     cache: "no-store", //SSR

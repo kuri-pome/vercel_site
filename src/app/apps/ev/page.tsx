@@ -46,10 +46,10 @@ const fetchStationData = async (stationId: number) => {
 const createStationData = async () => {
   const StationData: Array<EvStationCardType> = [];
   var sockets: Array<StationSocketType>
-  const newEvInfos: Array<EvStationType> = []
+  // const newEvInfos: Array<EvStationType> = []
   for (const evInfo of EvInfos) {
-    const stationId = await fetchStationId(evInfo.stationName);
-    // const stationId = evInfo.stationId
+    // const stationId = await fetchStationId(evInfo.stationName);
+    const stationId = evInfo.stationId
     const data = await fetchStationData(stationId);
     sockets = []
 
@@ -72,15 +72,15 @@ const createStationData = async () => {
       sockets: sockets
     }
     StationData.push(StationDatum)
-    const newEvInfo: EvStationType = {
-      name: evInfo.name,
-      googleMap: evInfo.googleMap,
-      stationName: evInfo.stationName,
-      stationId: stationId,
-    }
-    newEvInfos.push(newEvInfo)
+    // const newEvInfo: EvStationType = {
+    //   name: evInfo.name,
+    //   googleMap: evInfo.googleMap,
+    //   stationName: evInfo.stationName,
+    //   stationId: stationId,
+    // }
+    // newEvInfos.push(newEvInfo)
   }
-  console.log(newEvInfos)
+  // console.log(newEvInfos)
   return StationData;
 }
 

@@ -26,6 +26,12 @@ export const EvInfos: EvStationType[] = [
     stationId: 96115
   },
   {
+    name: '日産・和田山',
+    googleMap: 'https://maps.app.goo.gl/E7PF3qzfa2xncHDo9',
+    stationName: '兵庫日産自動車和田山店　急速１',
+    stationId: 51446
+  },
+  {
     name: '日産・八鹿',
     googleMap: 'https://maps.app.goo.gl/V3pbi6fmHSzQo3kH9',
     stationName: '兵庫日産八鹿店　急速1',
@@ -110,9 +116,9 @@ export const EvInfos: EvStationType[] = [
     stationId: 90604
   },
   {
-    name: '日産大阪堺店　急速１',
+    name: '日産・大阪堺',
     googleMap: 'https://maps.app.goo.gl/MSNnjS1A2hKXpC5r8',
-    stationName: '日産大阪八尾店【左】　急速２Ｈ２',
+    stationName: '日産大阪堺店　急速１',
     stationId: 78157
   }
 ];

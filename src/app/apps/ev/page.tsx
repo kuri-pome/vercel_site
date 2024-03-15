@@ -43,12 +43,11 @@ const fetchStationData = async (stationId: number) => {
   return data;
 }
 
+// stationidを固定の方
 const createStationData = async () => {
   const StationData: Array<EvStationCardType> = [];
   var sockets: Array<StationSocketType>
-  // const newEvInfos: Array<EvStationType> = []
   for (const evInfo of EvInfos) {
-    // const stationId = await fetchStationId(evInfo.stationName);
     const stationId = evInfo.stationId
     const data = await fetchStationData(stationId);
     sockets = []
@@ -72,17 +71,50 @@ const createStationData = async () => {
       sockets: sockets
     }
     StationData.push(StationDatum)
-    // const newEvInfo: EvStationType = {
-    //   name: evInfo.name,
-    //   googleMap: evInfo.googleMap,
-    //   stationName: evInfo.stationName,
-    //   stationId: stationId,
-    // }
-    // newEvInfos.push(newEvInfo)
   }
-  // console.log(newEvInfos)
   return StationData;
 }
+
+// stationIdを取得してlog出力
+// const createStationData = async () => {
+//   const StationData: Array<EvStationCardType> = [];
+//   var sockets: Array<StationSocketType>
+//   const newEvInfos: Array<EvStationType> = []
+//   for (const evInfo of EvInfos) {
+//     const stationId = await fetchStationId(evInfo.stationName);
+//     const data = await fetchStationData(stationId);
+//     sockets = []
+
+//     for (const stationSocket of data.stationSockets) {
+//       sockets.push({
+//         socketId: stationSocket.id,
+//         socketStatusId: stationSocket.socketStatusId,
+//         power: stationSocket.maximumPower,
+
+//       })
+//     }
+//     const StationDatum: EvStationCardType = {
+//       name: evInfo.name,
+//       googleMap: evInfo.googleMap,
+//       stationName: evInfo.stationName,
+//       stationId: stationId,
+//       caption: data.caption,
+//       addressAddress: data.addressAddress1,
+//       stationStatus: data.stationStatusId,
+//       sockets: sockets
+//     }
+//     StationData.push(StationDatum)
+//     const newEvInfo: EvStationType = {
+//       name: evInfo.name,
+//       googleMap: evInfo.googleMap,
+//       stationName: evInfo.stationName,
+//       stationId: stationId,
+//     }
+//     newEvInfos.push(newEvInfo)
+//   }
+//   console.log(newEvInfos)
+//   return StationData;
+// }
 
 
 const page = async () => {

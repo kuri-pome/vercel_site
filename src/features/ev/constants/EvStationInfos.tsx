@@ -23,7 +23,7 @@ export const EvInfos: EvStationType[] = [
     name: 'イオン・大日',
     googleMap: 'https://maps.app.goo.gl/ocnYKXTbSMx5iU6X8',
     stationName: 'イオンモール大日　急速１',
-    stationId: 80643
+    stationId: 96115
   },
   {
     name: '日産・八鹿',
@@ -108,5 +108,11 @@ export const EvInfos: EvStationType[] = [
     googleMap: 'https://maps.app.goo.gl/gZ1FztPp2uZqagdf6',
     stationName: '日産大阪八尾店【左】　急速２Ｈ２',
     stationId: 90604
+  },
+  {
+    name: '日産大阪堺店　急速１',
+    googleMap: 'https://maps.app.goo.gl/MSNnjS1A2hKXpC5r8',
+    stationName: '日産大阪八尾店【左】　急速２Ｈ２',
+    stationId: 78157
   }
 ];

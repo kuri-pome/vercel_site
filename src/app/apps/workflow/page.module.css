@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.left,
+.main,
+.right {
+    height: 100%;
+}
+
+.left,
+.right {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+}
+
+.left {
+    width: 200px;
+    left: 0;
+    top: 0;
+    background-color: #5abcda;
+    color: #FFF;
+    padding: 20px;
+}
+
+.main {
+    flex-grow: 1;
+}

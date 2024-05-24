@@ -20,7 +20,7 @@ const createApiBase = () => {
 
 const fetchStationId = async (stationName: string) => {
   const apiBase = createApiBase()
-  const response = await fetch(`${apiBase}/api/ev/v1/findPlacesByQuery`, {
+  const response = await fetch(`${apiBase}/api/v1/ev/findPlacesByQuery`, {
     method: 'POST',
     cache: "no-store", //SSR
     headers: {
@@ -35,7 +35,7 @@ const fetchStationId = async (stationName: string) => {
 
 const fetchStationData = async (stationId: number) => {
   const apiBase = createApiBase()
-  const response = await fetch(`${apiBase}/api/ev/v1/fetchStationData?stationId=${stationId}`, {
+  const response = await fetch(`${apiBase}/api/v1/ev/fetchStationData?stationId=${stationId}`, {
     method: 'GET',
     cache: "no-store", //SSR
   })

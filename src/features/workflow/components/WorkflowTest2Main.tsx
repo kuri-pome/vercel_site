@@ -61,24 +61,14 @@ const WorkflowTest2Main = () => {
                     onMouseMove={handleSplitMouseMove}
                 >
                     <div style={style.split_left}>
-                        <WorkflowTest2Setting
-                            setCustomerData={setCustomerData}
-                            flyerPageWidth={flyerPageWidth}
-                            setFlyerPageWidth={setFlyerPageWidth}
-                            flyerPageHeight={flyerPageHeight}
-                            setFlyerPageHeight={setFlyerPageHeight}
-                        />
+                        <WorkflowTest2Setting/>
                     </div>
                     <div
                         style={style.mover}
                         onMouseDown={handleSplitMouseDown}
                     ></div>
                     <div style={style.split_right} ref={flyerPageRef}>
-                        <WorkflowPage
-                            customerData={customerData}
-                            flyerPageWidth={flyerPageWidth}
-                            flyerPageHeight={flyerPageHeight}
-                        />
+                        <WorkflowPage/>
                     </div>
                 </div>
             </div>

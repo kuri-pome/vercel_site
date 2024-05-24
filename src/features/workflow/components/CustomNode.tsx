@@ -16,7 +16,6 @@ const CustomNode: FC<NodeProps> = ({ data, xPos, yPos }) => {
       <NodeResizer />
       <Handle type="target" position={Position.Top} />
       {/* ./hoge.pngをのせる */}
-      <Image src="/hoge.png" width={100} height={100} />
       <div>
         <div>
           Label: <strong>{data.label}</strong>

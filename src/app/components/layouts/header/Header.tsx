@@ -3,7 +3,7 @@ import styles from "./Header.module.css"
 
 
 export const Header = () => {
-  const menuItems: Array<string> = [
+  const menuItems: Array<{name: string, link: string}> = [
     { name: "profile", link: "/profile" },
     { name: "work", link: "/work" },
     { name: "blog", link: "/blog" },
@@ -26,17 +26,6 @@ export const Header = () => {
                 ))}
             </ul>
         </nav>
-
-        {/* <nav className={styles.nav}>
-          <h1><Link href="/">Kuripome Site</Link></h1>
-          <ul className={styles.ul}>
-            {
-              headers.map((header, index) => (
-                <li key={index} className={styles.li}><Link href={`/${header}`}>{header}</Link></li>
-              ))
-            }
-          </ul>
-        </nav> */}
       </header>
     </>
   )

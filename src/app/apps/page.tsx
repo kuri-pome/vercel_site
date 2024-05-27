@@ -5,7 +5,8 @@ const page = () => {
 
   const apps: Array<string> = [
     "ev",
-    "workflow"
+    "workflow",
+    "farm"
   ];
   return (
     <>

@@ -43,7 +43,7 @@ const SlideBesideComp: React.FC<SlideBesideCompProps> = (props) => {
     if (!isAvailableSplit) return
     if (!e.currentTarget.parentElement) return
     const rectParent = e.currentTarget.parentElement.getBoundingClientRect()
-    // マウスの座標-親要素の左端の座標/親要素の幅
+    // (マウスの座標-親要素の左端の座標)/親要素の幅
     // = 真ん中のwidgetの座標/親要素の幅
     const ratio = (e.clientX - rectParent.left) / rectParent.width
     setSplitRatio(ratio)

@@ -1,8 +1,28 @@
 'use client'
 import React from 'react'
-import WorkflowTest2Setting from './WorkflowTest2Setting'
-import WorkflowPage from './WorkflowPage'
 import SlideBesideComp from '@/features/common/components/SlideBesideComp'
+import SlideVerticalComp from '@/features/common/components/SlideVerticalComp'
+
+const top = () => {
+  return <div className="h-full bg-gray-100">top</div>
+}
+
+const bottom = () => {
+  return <div className="h-full max-w-max">bottom</div>
+}
+
+const left = () => {
+  return <div className="h-full bg-gray-100">left</div>
+}
+
+const right = () => {
+  return (
+    <div className="h-full max-h-max">
+      right
+      <SlideVerticalComp topComp={top} bottomComp={bottom} ratio={0.3} />
+    </div>
+  )
+}
 
 const WorkflowTest2Main = () => {
   return (
@@ -11,11 +31,7 @@ const WorkflowTest2Main = () => {
         random_check
       </div>
       <div className="grow h-full">
-        <SlideBesideComp
-          leftComp={WorkflowTest2Setting}
-          rightComp={WorkflowPage}
-          ratio={0.3}
-        />
+        <SlideBesideComp leftComp={left} rightComp={right} ratio={0.3} />
       </div>
     </div>
   )

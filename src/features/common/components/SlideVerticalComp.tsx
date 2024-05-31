@@ -20,18 +20,18 @@ const SlideVerticalComp: React.FC<SlideVerticalCompProps> = (props) => {
     setPageHeight(getElementProperty('height'))
   }, [])
   var style = {
-    split_left: {
+    split_top: {
       width: '100%',
       height: `${splitRatio * 100}%`,
     },
-    split_right: {
+    split_bottom: {
       width: '100%',
       height: `${(1 - splitRatio) * 100}%`,
     },
     mover: {
       width: '100%',
       height: '5px',
-      cursor: 'col-resize',
+      cursor: 'row-resize',
     },
   }
   const handleSplitMouseDown = (e: React.MouseEvent) => {
@@ -44,23 +44,23 @@ const SlideVerticalComp: React.FC<SlideVerticalCompProps> = (props) => {
     if (!isAvailableSplit) return
     if (!e.currentTarget.parentElement) return
     const rectParent = e.currentTarget.parentElement.getBoundingClientRect()
-    // マウスの座標-親要素の左端の座標/親要素の幅
+    // (マウスの座標-親要素の上端の座標)/親要素の幅
     // = 真ん中のwidgetの座標/親要素の幅
-    const ratio = (e.clientX - rectParent.left) / rectParent.width
+    const ratio = (e.clientY - rectParent.top) / rectParent.height
     setSplitRatio(ratio)
   }
 
   return (
     <div
-      className="h-full flex"
+      className="h-full flex-row"
       onMouseUp={handleSplitMouseUp}
       onMouseMove={handleSplitMouseMove}
     >
-      <div style={style.split_left}>
+      <div style={style.split_top}>
         <props.topComp />
       </div>
       <div style={style.mover} onMouseDown={handleSplitMouseDown}></div>
-      <div style={style.split_right} ref={pageRef}>
+      <div style={style.split_bottom} ref={pageRef}>
         <props.bottomComp />
       </div>
     </div>

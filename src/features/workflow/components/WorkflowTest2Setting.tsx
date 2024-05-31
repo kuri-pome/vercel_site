@@ -1,14 +1,9 @@
-"use client";
-import { useState } from "react"
-import Link from "next/link"
-
+'use client'
+import { useState } from 'react'
+import Link from 'next/link'
 
 export const WorkflowTest2Setting = () => {
-    return (
-        <div className="h-full bg-gray-100">
-            hoge
-        </div>
-    )
+  return <div className="h-full bg-gray-100">hoge</div>
 }
 
-export default WorkflowTest2Setting;
+export default WorkflowTest2Setting

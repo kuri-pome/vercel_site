@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+.header,
+.footer {
+    height: 80px;
+    /* FooterとHeaderの高さを設定します。値はお好みで設定してください。 */
+}
+
+.left,
+.main,
+.right {
+    height: 100%;
+}
+
+.left,
+.right {
+    flex: 1;
+}
+
+.main {
+    flex: 2;
+    /* Mainの横幅がLeftとRightのそれぞれ2倍になります。値はお好みで設定してください。 */
+}

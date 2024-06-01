@@ -8,4 +8,4 @@ const WorkflowMain = () => {
   )
 }
 
-export default WorkflowMain;
+export default WorkflowMain

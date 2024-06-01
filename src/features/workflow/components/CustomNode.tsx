@@ -1,46 +1,30 @@
-'use client';
-import Image from 'next/image';
+'use client'
+import Image from 'next/image'
 
-import { memo, type FC, type CSSProperties } from 'react';
-import { Handle, Position, type NodeProps, NodeResizer } from 'reactflow';
+import { memo, type FC, type CSSProperties } from 'react'
+import { Handle, Position, type NodeProps, NodeResizer } from 'reactflow'
 
-const sourceHandleStyleA: CSSProperties = { left: 50 };
-const sourceHandleStyleB: CSSProperties = {
-  right: 50,
-  left: 'auto',
-};
+const sourceHandleStyle: CSSProperties = { left: 'auto', right: 'auto' }
 
-const CustomNode: FC<NodeProps> = ({ data, xPos, yPos }) => {
+const CustomNode: FC<NodeProps> = ({ data }) => {
   return (
-    <>
+    <div>
+      <Image
+        alt={data.label}
+        src="/img/vegetables/tomato.svg"
+        width={30}
+        height={30}
+      ></Image>
       <NodeResizer />
       <Handle type="target" position={Position.Top} />
-      {/* ./hoge.pngをのせる */}
-      <div>
-        <div>
-          Label: <strong>{data.label}</strong>
-        </div>
-        <div>
-          Position:{' '}
-          <strong>
-            {xPos.toFixed(2)},{yPos.toFixed(2)}
-          </strong>
-        </div>
-      </div>
       <Handle
         type="source"
         position={Position.Bottom}
         id="a"
-        style={sourceHandleStyleA}
+        // style={sourceHandleStyle}
       />
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        id="b"
-        style={sourceHandleStyleB}
-      />
-    </>
-  );
-};
+    </div>
+  )
+}
 
-export default memo(CustomNode);
+export default memo(CustomNode)

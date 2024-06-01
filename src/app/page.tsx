@@ -1,9 +1,9 @@
-import Link from "next/link"
-import Image from 'next/image';
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
-    <>
+    <div className="flex-row">
       <div>
         <Image
           src="/img/top_text.jpg"
@@ -27,29 +27,21 @@ export default function Home() {
         </div>
         <div>
           <h1 className="italic text-5xl font-bold py-5">Profile.</h1>
-          <p className="pb-8 border-b border-slate-400">
-            自己紹介
-          </p>
+          <p className="pb-8 border-b border-slate-400">自己紹介</p>
         </div>
         <div>
           <h1 className="italic text-5xl font-bold py-5">Work.</h1>
-          <p className="pb-8 border-b border-slate-400">
-            経歴
-          </p>
+          <p className="pb-8 border-b border-slate-400">経歴</p>
         </div>
         <div>
           <h1 className="italic text-5xl font-bold py-5">Blog.</h1>
-          <p className="pb-8 border-b border-slate-400">
-            ブログ
-          </p>
+          <p className="pb-8 border-b border-slate-400">ブログ</p>
         </div>
         <div>
           <h1 className="italic text-5xl font-bold py-5">apps.</h1>
-          <p className="pb-8 border-b border-slate-400">
-            アプリ一覧
-          </p>
+          <p className="pb-8 border-b border-slate-400">アプリ一覧</p>
         </div>
       </div>
-    </>
+    </div>
   )
 }

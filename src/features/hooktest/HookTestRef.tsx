@@ -1,13 +1,15 @@
-"use client"
-import React, {useRef, useState} from 'react'
+'use client'
+import React, { useRef, useState } from 'react'
 
 export const HookTestRef = () => {
-  const inputEl = useRef(null);
-  const [text, setText] = useState("");
+  const inputEl = useRef<HTMLInputElement>(null)
+  const [text, setText] = useState('')
   const handleClick = () => {
-    setText(inputEl.current.value);
-  };
-  console.log("レンダリング！！");
+    if (inputEl == null) return
+    if (inputEl.current == null) return
+    setText(inputEl.current.value)
+  }
+  console.log('レンダリング！！')
   return (
     <>
       <div>HookTestRef</div>

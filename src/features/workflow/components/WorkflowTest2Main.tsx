@@ -3,13 +3,9 @@ import React from 'react'
 import SlideBesideComp from '@/features/common/components/SlideBesideComp'
 import SlideVerticalComp from '@/features/common/components/SlideVerticalComp'
 
-const top = () => {
-  return <div className="h-full bg-gray-100">top</div>
-}
+const top = <div className="h-full bg-gray-100">top</div>
 
-const bottom = () => {
-  return <div className="h-full max-w-max">bottom</div>
-}
+const bottom = <div className="h-full max-w-max">bottom</div>
 
 const left = () => {
   return <div className="h-full bg-gray-100">left</div>

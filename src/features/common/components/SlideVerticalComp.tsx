@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useGetElementProperty } from '../hooks/GetElementProperty'
 
 interface SlideVerticalCompProps {
-  topComp: JSX.Element
-  bottomComp: JSX.Element
+  topComp: React.ReactNode
+  bottomComp: React.ReactNode
   ratio: number
 }
 
@@ -57,11 +57,13 @@ const SlideVerticalComp: React.FC<SlideVerticalCompProps> = (props) => {
       onMouseMove={handleSplitMouseMove}
     >
       <div style={style.split_top}>
-        <props.topComp />
+        {/* <props.topComp /> */}
+        {props.topComp}
       </div>
       <div style={style.mover} onMouseDown={handleSplitMouseDown}></div>
       <div style={style.split_bottom} ref={pageRef}>
-        <props.bottomComp />
+        {/* <props.bottomComp /> */}
+        {props.bottomComp}
       </div>
     </div>
   )

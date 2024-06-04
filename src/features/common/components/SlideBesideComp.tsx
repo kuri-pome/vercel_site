@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useGetElementProperty } from '../hooks/GetElementProperty'
 
 interface SlideBesideCompProps {
-  leftComp: React.ReactNode
-  rightComp: React.ReactNode
+  leftComp: () => React.ReactNode
+  rightComp: () => React.ReactNode
   ratio: number
 }
 
@@ -56,13 +56,13 @@ const SlideBesideComp: React.FC<SlideBesideCompProps> = (props) => {
       onMouseMove={handleSplitMouseMove}
     >
       <div style={style.split_left}>
-        <props.leftComp />
-        {/* {props.leftComp} */}
+        {/* <props.leftComp /> */}
+        {props.leftComp()}
       </div>
       <div style={style.mover} onMouseDown={handleSplitMouseDown}></div>
       <div style={style.split_right} ref={pageRef}>
-        <props.rightComp />
-        {/* {props.rightComp} */}
+        {/* <props.rightComp /> */}
+        {props.rightComp()}
       </div>
     </div>
   )

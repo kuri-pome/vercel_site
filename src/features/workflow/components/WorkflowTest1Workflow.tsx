@@ -88,8 +88,10 @@ const WorkflowTest1Workflow = () => {
 
   return (
     <>
-      <div className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-        <button onClick={addNode}>add</button>
+      <div>
+        <div className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          <button onClick={addNode}>add</button>
+        </div>
       </div>
       <div style={{ width: '100%', height: '100%' }}>
         <ReactFlow

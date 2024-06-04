@@ -1,9 +1,13 @@
 'use client'
 import React, { Fragment, useState, useEffect } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
+import { Listbox, Transition, Button } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
 const mode = [{ name: 'UiToText' }, { name: 'TextToUi' }]
+
+type ControlProps = {
+  addNode: React.MouseEventHandler<HTMLButtonElement>
+}
 
 type SelectProps = {
   selected: { name: string }
@@ -66,14 +70,23 @@ const SelectMode: React.FC<SelectProps> = (props) => {
     </div>
   )
 }
-export const WorkflowTest1Control = () => {
+export const WorkflowTest1Control: React.FC<ControlProps> = (props) => {
+  // mode info
   const [selected, setSelected] = useState(mode[0])
+
   useEffect(() => {
     console.log(selected.name)
   }, [selected])
   return (
     <div className="w-full">
+      <p className="font-bold">・実行モード</p>
       <SelectMode selected={selected} setSelected={setSelected} />
+      <Button
+        className="w-full inline-flex items-center gap-2 rounded-md bg-blue-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-blue-500/50 focus:outline-none data-[hover]:bg-blue-600 data-[open]:bg-blue-700 data-[focus]:outline-1 data-[focus]:outline-white"
+        onClick={props.addNode}
+      >
+        AddNode
+      </Button>
     </div>
   )
 }

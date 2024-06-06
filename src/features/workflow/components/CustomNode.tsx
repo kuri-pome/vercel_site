@@ -8,13 +8,16 @@ const sourceHandleStyle: CSSProperties = { left: 'auto', right: 'auto' }
 
 const CustomNode: FC<NodeProps> = ({ data }) => {
   return (
-    <div>
-      <Image
-        alt={data.label}
-        src="/img/vegetables/tomato.svg"
-        width={30}
-        height={30}
-      ></Image>
+    <div className="border-4 w-[150px] h-[50px] text-center">
+      <div className="flex">
+        <Image
+          alt={data.label}
+          src={`/img/workflow/${data.name}.svg`}
+          width={30}
+          height={30}
+        ></Image>
+        {`${data.name}`}
+      </div>
       <NodeResizer />
       <Handle type="target" position={Position.Top} />
       <Handle

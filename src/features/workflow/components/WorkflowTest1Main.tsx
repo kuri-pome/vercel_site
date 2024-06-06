@@ -127,7 +127,7 @@ const WorkflowTest1Main = () => {
   return (
     <div className="flex-row h-full">
       <HeadlessModalAlert isAlert={isAlert} setIsAlert={setIsAlert} />
-      <div className="h-full grow">
+      <div className="h-full">
         <div className="flex h-full">
           <div className="h-full w-[300px] border-4">
             <WorkflowTest1Control
@@ -142,7 +142,7 @@ const WorkflowTest1Main = () => {
               setNodeType={setNodeType}
             />
           </div>
-          <div className="border-1 grow">
+          <div className="border-1 w-[300px] grow">
             {selectedSrcTransition == 'Workflow' ? (
               <WorkflowTest1Workflow
                 nodes={nodes}
@@ -151,20 +151,16 @@ const WorkflowTest1Main = () => {
                 edges={edges}
               />
             ) : (
-              <div>
+              <>
                 {selectedSrcTransition == 'WorkflowText' ? (
-                  <div>
-                    <WorkflowTest1WorkflowText />
-                  </div>
+                  <WorkflowTest1WorkflowText nodes={nodes} edges={edges} />
                 ) : (
-                  <div>
-                    <WorkflowTest1AirflowForm />
-                  </div>
+                  <WorkflowTest1AirflowForm />
                 )}
-              </div>
+              </>
             )}
           </div>
-          <div className="border-1 grow">
+          <div className="border-1 w-[300px] grow">
             {selectedDstTransition == 'Workflow' ? (
               <WorkflowTest1Workflow
                 nodes={nodes}
@@ -173,17 +169,13 @@ const WorkflowTest1Main = () => {
                 edges={edges}
               />
             ) : (
-              <div>
+              <>
                 {selectedDstTransition == 'WorkflowText' ? (
-                  <div>
-                    <WorkflowTest1WorkflowText />
-                  </div>
+                  <WorkflowTest1WorkflowText nodes={nodes} edges={edges} />
                 ) : (
-                  <div>
-                    <WorkflowTest1AirflowForm />
-                  </div>
+                  <WorkflowTest1AirflowForm />
                 )}
-              </div>
+              </>
             )}
           </div>
         </div>

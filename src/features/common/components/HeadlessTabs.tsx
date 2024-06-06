@@ -16,8 +16,8 @@ export const HeadlessTabs: React.FC<HeadlessTabsProps> = (props) => {
               key={tab.name}
               className={({ selected }) =>
                 selected
-                  ? 'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-100 hover:bg-white/[0.12] hover:text-white'
-                  : 'w-full rounded-lg py-2.5 text-sm font-medium leading-5 bg-white text-blue-700 shadow'
+                  ? 'w-full rounded-lg py-2.5 text-sm font-medium leading-5 bg-white text-blue-700 shadow'
+                  : 'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-100 hover:bg-white/[0.12] hover:text-white'
               }
             >
               <>{tab.name}</>

@@ -14,7 +14,11 @@ export const HeadlessTabs: React.FC<HeadlessTabsProps> = (props) => {
           {props.tabs.map((tab, idx) => (
             <Tab
               key={tab.name}
-              className="w-full rounded-lg py-2.5 text-sm font-medium leading-5 bg-white text-blue-700 shadow"
+              className={({ selected }) =>
+                selected
+                  ? 'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                  : 'w-full rounded-lg py-2.5 text-sm font-medium leading-5 bg-white text-blue-700 shadow'
+              }
             >
               <>{tab.name}</>
             </Tab>
